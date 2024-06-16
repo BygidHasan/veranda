@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function Interface() {
   return (
-    <div className="fixed top-[50vh] bg-bgColor h-[50vh] w-full">
+    <div className="fixed top-[50vh] md:top-0 md:right-0 bg-bgColor h-[50vh] md:h-screen w-full md:w-[40%] ">
       <Tabs defaultValue="veranda" className="w-full">
         <TabsList className="border-none rounded-none outline-none w-full h-16 bg-bgGrayColor">
           <TabsTrigger
@@ -40,11 +40,23 @@ export default function Interface() {
             SUN <br /> PROTECTION
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="veranda">VERANDA content</TabsContent>
-        <TabsContent value="gardenRoom">GARDEN ROOM content</TabsContent>
-        <TabsContent value="slidingWall"> SLIDING WALL content</TabsContent>
-        <TabsContent value="carPort">CARPORT content</TabsContent>
-        <TabsContent value="sunProtection"> SUN PROTECTION content</TabsContent>
+        <TabsContent className="text-center" value="veranda">
+          VERANDA content
+        </TabsContent>
+        <TabsContent className="text-center" value="gardenRoom">
+          GARDEN ROOM content
+        </TabsContent>
+        <TabsContent className="text-center" value="slidingWall">
+          {' '}
+          SLIDING WALL content
+        </TabsContent>
+        <TabsContent className="text-center" value="carPort">
+          CARPORT content
+        </TabsContent>
+        <TabsContent className="text-center" value="sunProtection">
+          {' '}
+          SUN PROTECTION content
+        </TabsContent>
       </Tabs>
     </div>
   );
