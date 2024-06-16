@@ -1,5 +1,5 @@
-import Canvas3D from "./models/Canvas3D";
-import Interface from "./components/Interface";
+import Canvas3D from "./components/models/Canvas3D";
+import Interface from "./components/interface/Interface";
 
 function App() {
   return (
