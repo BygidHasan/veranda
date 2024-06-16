@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function Interface() {
   return (
-    <div className="fixed top-[50vh] md:top-0 md:right-0 bg-bgColor h-[50vh] md:h-screen w-full md:w-[40%] ">
+    <div className="fixed top-[50vh] md:top-0 md:right-0 bg-bgColor h-[50vh] md:h-screen w-full md:w-[40%] lg:w-[32%] xl:w-[28%] 2xl:w-[24%] ">
       <Tabs defaultValue="veranda" className="w-full">
         <TabsList className="border-none rounded-none outline-none w-full h-16 bg-bgGrayColor">
           <TabsTrigger
