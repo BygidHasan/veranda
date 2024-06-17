@@ -1,4 +1,11 @@
-import { ReactNode, createContext, useContext, useState } from 'react';
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useContext,
+  useState,
+} from 'react';
 
 interface ContextProps {
   productType:
@@ -15,6 +22,8 @@ interface ContextProps {
       | 'carport'
       | 'sunProtection'
   ) => void;
+  productnavigate: boolean;
+  setProductNavigate: Dispatch<SetStateAction<boolean>>;
 }
 
 const VerandaCustomizationContext = createContext<ContextProps | undefined>(
@@ -25,10 +34,16 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
   const [productType, setProductType] = useState<
     'veranda' | 'gardenRoom' | 'slidingGlassWall' | 'carport' | 'sunProtection'
   >('veranda');
+  const [productnavigate, setProductNavigate] = useState(false);
 
   return (
     <VerandaCustomizationContext.Provider
-      value={{ productType, setProductType }}
+      value={{
+        productType,
+        setProductType,
+        productnavigate,
+        setProductNavigate,
+      }}
     >
       {children}
     </VerandaCustomizationContext.Provider>
