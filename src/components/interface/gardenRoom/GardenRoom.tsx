@@ -1,3 +1,3 @@
 export default function GardenRoom() {
-  return <div>GardenRoom</div>;
+  return <div className="text-center text-3xl font-bold">GardenRoom</div>;
 }

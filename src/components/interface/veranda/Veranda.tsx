@@ -1,3 +1,3 @@
 export default function Veranda() {
-  return <div>Veranda</div>;
+  return <div className="text-center text-3xl font-bold">Veranda</div>;
 }
