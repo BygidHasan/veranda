@@ -1,9 +1,22 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useVeranda } from '@/context/VerandaCustomization';
+import BaseChoiceVerandaTab from './baseChoiceTab/BaseChoiceVerandaTab';
 
 export default function Veranda() {
+  const { verandaTabs, setVerandaTabs } = useVeranda();
+
   return (
     <>
-      <Tabs defaultValue="baseChoice" className="w-full">
+      <Tabs
+        value={verandaTabs}
+        onValueChange={(value) =>
+          setVerandaTabs(
+            value as 'baseChoice' | 'sideWall' | 'led' | 'delivery'
+          )
+        }
+        defaultValue="baseChoice"
+        className="w-full"
+      >
         <TabsList className="border-none rounded-none outline-none w-full h-16 bg-bgGrayColor">
           <TabsTrigger
             className=" rounded-none outline-none border-r-2 px-2 h-12 text-xs uppercase"
@@ -30,15 +43,15 @@ export default function Veranda() {
           </TabsTrigger>
 
           <TabsTrigger
-            className=" rounded-none outline-none px-2 h-12 border-r-2 text-xs uppercase"
+            className=" rounded-none outline-none px-2 h-12 text-xs uppercase"
             value="delivery"
           >
             delivery <br />
             options
           </TabsTrigger>
         </TabsList>
-        <TabsContent className="text-center" value="baseChoice">
-          baseChoice content
+        <TabsContent className="" value="baseChoice">
+          <BaseChoiceVerandaTab />
         </TabsContent>
         <TabsContent className="text-center" value="sideWall">
           sideWall content
