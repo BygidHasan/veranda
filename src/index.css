@@ -80,3 +80,7 @@
     @apply bg-background text-textColor;
   }
 }
+
+canvas {
+  touch-action: none;
+}
