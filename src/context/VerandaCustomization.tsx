@@ -5,28 +5,28 @@ import {
   createContext,
   useContext,
   useState,
-} from 'react';
+} from "react";
 
 interface ContextProps {
   productType:
-    | 'veranda'
-    | 'gardenRoom'
-    | 'slidingGlassWall'
-    | 'carport'
-    | 'sunProtection';
+    | "veranda"
+    | "gardenRoom"
+    | "slidingGlassWall"
+    | "carport"
+    | "sunProtection";
   setProductType: (
     productType:
-      | 'veranda'
-      | 'gardenRoom'
-      | 'slidingGlassWall'
-      | 'carport'
-      | 'sunProtection'
+      | "veranda"
+      | "gardenRoom"
+      | "slidingGlassWall"
+      | "carport"
+      | "sunProtection"
   ) => void;
   productnavigate: boolean;
   setProductNavigate: Dispatch<SetStateAction<boolean>>;
-  verandaTabs: 'baseChoice' | 'sideWall' | 'led' | 'delivery';
+  verandaTabs: "baseChoice" | "sideWall" | "led" | "delivery";
   setVerandaTabs: (
-    verandaTabs: 'baseChoice' | 'sideWall' | 'led' | 'delivery'
+    verandaTabs: "baseChoice" | "sideWall" | "led" | "delivery"
   ) => void;
 
   // Basse choice tab
@@ -38,26 +38,49 @@ interface ContextProps {
   setFreeStandingV: Dispatch<SetStateAction<boolean>>;
   flatGutterV: boolean;
   setFlatGutterV: Dispatch<SetStateAction<boolean>>;
-  verandaColor: 'anthracite' | 'black' | 'silverGrey' | 'metallicGrey';
+  verandaColor: "anthracite" | "black" | "silverGrey" | "metallicGrey";
   setVerandaColor: (
-    verandaColor: 'anthracite' | 'black' | 'silverGrey' | 'metallicGrey'
+    verandaColor: "anthracite" | "black" | "silverGrey" | "metallicGrey"
   ) => void;
   verandaDepth: 250 | 300 | 350 | 400 | 450 | 500;
   setVerandaDepth: (verandaDepth: 250 | 300 | 350 | 400 | 450 | 500) => void;
-  verandaRoof: 'polyOpal' | 'polyClear' | 'glassClear' | 'glassOpal';
+  verandaRoof: "polyOpal" | "polyClear" | "glassClear" | "glassOpal";
   setVerandaRoof: (
-    verandaRoof: 'polyOpal' | 'polyClear' | 'glassClear' | 'glassOpal'
+    verandaRoof: "polyOpal" | "polyClear" | "glassClear" | "glassOpal"
   ) => void;
   rTube: boolean;
   setRTube: Dispatch<SetStateAction<boolean>>;
-  verandaShortening: 'no' | 'width' | 'depth' | 'widthAndDepth';
+  verandaShortening: "no" | "width" | "depth" | "widthAndDepth";
   setVerandaShortening: (
-    verandaShortening: 'no' | 'width' | 'depth' | 'widthAndDepth'
+    verandaShortening: "no" | "width" | "depth" | "widthAndDepth"
   ) => void;
-  wallType: 'left' | 'right' | 'front';
-  setWallType: (wallType: 'left' | 'right' | 'front') => void;
+
+  // wall options tabs
+  wallType: "left" | "right" | "front";
+  setWallType: (wallType: "left" | "right" | "front") => void;
   wallnavigate: boolean;
   setWallNavigate: Dispatch<SetStateAction<boolean>>;
+
+  leftWallType:
+    | "open"
+    | "polySpike"
+    | "ploySpiAluSide"
+    | "fullAluSide"
+    | "polySpieGlasSlide"
+    | "aluSpiGlasSlide"
+    | "glasSpiGlasSlide"
+    | "fixFrame";
+  setLeftWallType: (
+    leftWallType:
+      | "open"
+      | "polySpike"
+      | "ploySpiAluSide"
+      | "fullAluSide"
+      | "polySpieGlasSlide"
+      | "aluSpiGlasSlide"
+      | "glasSpiGlasSlide"
+      | "fixFrame"
+  ) => void;
 
   // Lighting tab
   lightingType: 'no' | '1per' | '2per' | '3per';
@@ -70,34 +93,45 @@ const VerandaCustomizationContext = createContext<ContextProps | undefined>(
 
 export const VerandaProvider = ({ children }: { children: ReactNode }) => {
   const [productType, setProductType] = useState<
-    'veranda' | 'gardenRoom' | 'slidingGlassWall' | 'carport' | 'sunProtection'
-  >('veranda');
+    "veranda" | "gardenRoom" | "slidingGlassWall" | "carport" | "sunProtection"
+  >("veranda");
   const [productnavigate, setProductNavigate] = useState(false);
   const [verandaTabs, setVerandaTabs] = useState<
-    'baseChoice' | 'sideWall' | 'led' | 'delivery'
-  >('baseChoice');
+    "baseChoice" | "sideWall" | "led" | "delivery"
+  >("baseChoice");
 
-  // Basse choice tab
+  // Base choice tab
   const [verandaWidth, setVerandaWidth] = useState<
     306 | 406 | 506 | 606 | 706 | 806 | 906 | 1006 | 1106 | 1206
   >(306);
   const [freeStandingV, setFreeStandingV] = useState(false);
   const [flatGutterV, setFlatGutterV] = useState(false);
   const [verandaColor, setVerandaColor] = useState<
-    'anthracite' | 'black' | 'silverGrey' | 'metallicGrey'
-  >('anthracite');
+    "anthracite" | "black" | "silverGrey" | "metallicGrey"
+  >("anthracite");
   const [verandaDepth, setVerandaDepth] = useState<
     250 | 300 | 350 | 400 | 450 | 500
   >(250);
   const [verandaRoof, setVerandaRoof] = useState<
-    'polyOpal' | 'polyClear' | 'glassClear' | 'glassOpal'
-  >('polyOpal');
-  const [rTube, setRTube] = useState(false);
+    "polyOpal" | "polyClear" | "glassClear" | "glassOpal"
+  >("polyOpal");
   const [verandaShortening, setVerandaShortening] = useState<
-    'no' | 'width' | 'depth' | 'widthAndDepth'
-  >('no');
-  const [wallType, setWallType] = useState<'left' | 'right' | 'front'>('left');
+    "no" | "width" | "depth" | "widthAndDepth"
+  >("no");
+
+  // Wall options tabs
+  const [wallType, setWallType] = useState<"left" | "right" | "front">("left");
   const [wallnavigate, setWallNavigate] = useState(false);
+  const [leftWallType, setLeftWallType] = useState<
+    | "open"
+    | "polySpike"
+    | "ploySpiAluSide"
+    | "fullAluSide"
+    | "polySpieGlasSlide"
+    | "aluSpiGlasSlide"
+    | "glasSpiGlasSlide"
+    | "fixFrame"
+  >("open");
 
   // Lighting tab
   const [lightingType, setLightingType] = useState<
@@ -131,10 +165,14 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
         setRTube,
         verandaShortening,
         setVerandaShortening,
+
+        // wall options tab
         wallType,
         setWallType,
         wallnavigate,
         setWallNavigate,
+        leftWallType,
+        setLeftWallType,
 
         // Lighting tab
         lightingType,
@@ -150,7 +188,7 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
 export const useVeranda = () => {
   const context = useContext(VerandaCustomizationContext);
   if (context === undefined) {
-    throw new Error('useVeranda must be used within a VerandaProvider');
+    throw new Error("useVeranda must be used within a VerandaProvider");
   }
   return context;
 };
