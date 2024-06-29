@@ -7,6 +7,7 @@ import VerandaDepth from './VerandaDepth';
 import VerandaRoofMaterial from './VerandaRoofMaterial';
 import Shortening from './Shortening';
 import ShorteningInputs from './ShorteningInputs';
+import ReinforcemetTube from './ReinforcemetTube';
 
 export default function BaseChoiceVerandaTab() {
   return (
@@ -23,6 +24,8 @@ export default function BaseChoiceVerandaTab() {
         <VerandaDepth />
 
         <VerandaRoofMaterial />
+
+        <ReinforcemetTube />
 
         <Shortening />
 

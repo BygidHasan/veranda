@@ -48,6 +48,8 @@ interface ContextProps {
   setVerandaRoof: (
     verandaRoof: 'polyOpal' | 'polyClear' | 'glassClear' | 'glassOpal'
   ) => void;
+  rTube: boolean;
+  setRTube: Dispatch<SetStateAction<boolean>>;
   verandaShortening: 'no' | 'width' | 'depth' | 'widthAndDepth';
   setVerandaShortening: (
     verandaShortening: 'no' | 'width' | 'depth' | 'widthAndDepth'
@@ -86,6 +88,7 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
   const [verandaRoof, setVerandaRoof] = useState<
     'polyOpal' | 'polyClear' | 'glassClear' | 'glassOpal'
   >('polyOpal');
+  const [rTube, setRTube] = useState(false);
   const [verandaShortening, setVerandaShortening] = useState<
     'no' | 'width' | 'depth' | 'widthAndDepth'
   >('no');
@@ -115,6 +118,8 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
         setVerandaDepth,
         verandaRoof,
         setVerandaRoof,
+        rTube,
+        setRTube,
         verandaShortening,
         setVerandaShortening,
         wallType,
