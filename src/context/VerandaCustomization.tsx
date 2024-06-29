@@ -48,6 +48,14 @@ interface ContextProps {
   setVerandaRoof: (
     verandaRoof: 'polyOpal' | 'polyClear' | 'glassClear' | 'glassOpal'
   ) => void;
+  verandaShortening: 'no' | 'width' | 'depth' | 'widthAndDepth';
+  setVerandaShortening: (
+    verandaShortening: 'no' | 'width' | 'depth' | 'widthAndDepth'
+  ) => void;
+  wallType: 'left' | 'right' | 'front';
+  setWallType: (wallType: 'left' | 'right' | 'front') => void;
+  wallnavigate: boolean;
+  setWallNavigate: Dispatch<SetStateAction<boolean>>;
 }
 
 const VerandaCustomizationContext = createContext<ContextProps | undefined>(
@@ -78,6 +86,11 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
   const [verandaRoof, setVerandaRoof] = useState<
     'polyOpal' | 'polyClear' | 'glassClear' | 'glassOpal'
   >('polyOpal');
+  const [verandaShortening, setVerandaShortening] = useState<
+    'no' | 'width' | 'depth' | 'widthAndDepth'
+  >('no');
+  const [wallType, setWallType] = useState<'left' | 'right' | 'front'>('left');
+  const [wallnavigate, setWallNavigate] = useState(false);
 
   return (
     <VerandaCustomizationContext.Provider
@@ -102,6 +115,12 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
         setVerandaDepth,
         verandaRoof,
         setVerandaRoof,
+        verandaShortening,
+        setVerandaShortening,
+        wallType,
+        setWallType,
+        wallnavigate,
+        setWallNavigate,
       }}
     >
       {children}
