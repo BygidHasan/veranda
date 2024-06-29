@@ -58,6 +58,10 @@ interface ContextProps {
   setWallType: (wallType: 'left' | 'right' | 'front') => void;
   wallnavigate: boolean;
   setWallNavigate: Dispatch<SetStateAction<boolean>>;
+
+  // Lighting tab
+  lightingType: 'no' | '1per' | '2per' | '3per';
+  setLightingType: (lightingType: 'no' | '1per' | '2per' | '3per') => void;
 }
 
 const VerandaCustomizationContext = createContext<ContextProps | undefined>(
@@ -95,6 +99,11 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
   const [wallType, setWallType] = useState<'left' | 'right' | 'front'>('left');
   const [wallnavigate, setWallNavigate] = useState(false);
 
+  // Lighting tab
+  const [lightingType, setLightingType] = useState<
+    'no' | '1per' | '2per' | '3per'
+  >('no');
+
   return (
     <VerandaCustomizationContext.Provider
       value={{
@@ -126,6 +135,10 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
         setWallType,
         wallnavigate,
         setWallNavigate,
+
+        // Lighting tab
+        lightingType,
+        setLightingType,
       }}
     >
       {children}
