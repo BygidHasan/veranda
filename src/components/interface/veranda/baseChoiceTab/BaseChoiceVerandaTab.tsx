@@ -6,6 +6,7 @@ import VerandaColor from './VerandaColor';
 import VerandaDepth from './VerandaDepth';
 import VerandaRoofMaterial from './VerandaRoofMaterial';
 import Shortening from './Shortening';
+import ShorteningInputs from './ShorteningInputs';
 
 export default function BaseChoiceVerandaTab() {
   return (
@@ -24,6 +25,8 @@ export default function BaseChoiceVerandaTab() {
         <VerandaRoofMaterial />
 
         <Shortening />
+
+        <ShorteningInputs />
       </CommandList>
     </Command>
   );
