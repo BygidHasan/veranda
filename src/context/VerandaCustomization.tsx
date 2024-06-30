@@ -60,12 +60,13 @@ interface ContextProps {
   setWallType: (wallType: "left" | "right" | "front") => void;
   wallnavigate: boolean;
   setWallNavigate: Dispatch<SetStateAction<boolean>>;
-
   leftWallType:
     | "open"
     | "polySpike"
     | "ploySpiAluSide"
     | "fullAluSide"
+    | "polyInsu"
+    | "fullInsu"
     | "polySpieGlasSlide"
     | "aluSpiGlasSlide"
     | "glasSpiGlasSlide"
@@ -76,6 +77,8 @@ interface ContextProps {
       | "polySpike"
       | "ploySpiAluSide"
       | "fullAluSide"
+      | "polyInsu"
+      | "fullInsu"
       | "polySpieGlasSlide"
       | "aluSpiGlasSlide"
       | "glasSpiGlasSlide"
@@ -83,8 +86,8 @@ interface ContextProps {
   ) => void;
 
   // Lighting tab
-  lightingType: 'no' | '1per' | '2per' | '3per';
-  setLightingType: (lightingType: 'no' | '1per' | '2per' | '3per') => void;
+  lightingType: "no" | "1per" | "2per" | "3per";
+  setLightingType: (lightingType: "no" | "1per" | "2per" | "3per") => void;
 }
 
 const VerandaCustomizationContext = createContext<ContextProps | undefined>(
@@ -115,6 +118,7 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
   const [verandaRoof, setVerandaRoof] = useState<
     "polyOpal" | "polyClear" | "glassClear" | "glassOpal"
   >("polyOpal");
+  const [rTube, setRTube] = useState(false);
   const [verandaShortening, setVerandaShortening] = useState<
     "no" | "width" | "depth" | "widthAndDepth"
   >("no");
@@ -127,6 +131,8 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
     | "polySpike"
     | "ploySpiAluSide"
     | "fullAluSide"
+    | "polyInsu"
+    | "fullInsu"
     | "polySpieGlasSlide"
     | "aluSpiGlasSlide"
     | "glasSpiGlasSlide"
@@ -135,8 +141,8 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
 
   // Lighting tab
   const [lightingType, setLightingType] = useState<
-    'no' | '1per' | '2per' | '3per'
-  >('no');
+    "no" | "1per" | "2per" | "3per"
+  >("no");
 
   return (
     <VerandaCustomizationContext.Provider

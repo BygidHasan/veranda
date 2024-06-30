@@ -16,30 +16,96 @@ export default function LeftWall() {
     setWallNavigate,
   } = useVeranda();
 
-  const glassClearPrices: { [key: number]: { [key: number]: number } } = {
-    306: { 250: 540, 300: 705, 350: 1000, 400: 1275 },
-    406: { 250: 690, 300: 995, 350: 1210, 400: 1520 },
-    506: { 250: 810, 300: 975, 350: 1135, 400: 1300 },
-    606: { 250: 725, 300: 940, 350: 1025, 400: 1760 },
-    706: { 250: 915, 300: 1350, 350: 1355, 400: 2100 },
-    806: { 250: 1800, 300: 2050, 350: 2275, 400: 3190 },
-    906: { 250: 2150, 300: 2530, 350: 2750, 400: 3780 },
-    1006: { 250: 2260, 300: 2875, 350: 3000, 400: 4120 },
-    1106: { 250: 1925, 300: 2325, 350: 2460, 400: 3530 },
-    1206: { 250: 2700, 300: 3225, 350: 3390, 400: 4780 },
+  // All prices
+  const polycarbonateSpike: { [key: number]: { [key: number]: number } } = {
+    306: { 250: 120, 300: 150, 350: 180, 400: 200, 450: 225, 500: 250 },
+    406: { 250: 120, 300: 150, 350: 180, 400: 200, 450: 225, 500: 250 },
+    506: { 250: 120, 300: 140, 350: 160, 400: 185, 450: 210, 500: 230 },
+    606: { 250: 120, 300: 140, 350: 160, 400: 185, 450: 210, 500: 230 },
+    706: { 250: 120, 300: 140, 350: 160, 400: 185, 450: 210, 500: 230 },
+    806: { 250: 120, 300: 140, 350: 160, 400: 185, 450: 210, 500: 230 },
+    906: { 250: 120, 300: 140, 350: 160, 400: 185, 450: 210, 500: 230 },
+    1006: { 250: 120, 300: 140, 350: 160, 400: 185, 450: 210, 500: 230 },
+    1106: { 250: 120, 300: 140, 350: 160, 400: 185, 450: 210, 500: 230 },
+    1206: { 250: 120, 300: 140, 350: 160, 400: 185, 450: 210, 500: 230 },
   };
-
-  const glassOpalPrices: { [key: number]: { [key: number]: number } } = {
-    306: { 250: 840, 300: 1065, 350: 1420, 400: 1670 },
-    406: { 250: 1090, 300: 1475, 350: 1760, 400: 2140 },
-    506: { 250: 1275, 300: 1530, 350: 1785, 400: 2040 },
-    606: { 250: 1210, 300: 1606, 350: 1805, 400: 2645 },
-    706: { 250: 1555, 300: 2125, 350: 2260, 400: 3130 },
-    806: { 250: 2540, 300: 2935, 350: 3310, 400: 4370 },
-    906: { 250: 2980, 300: 3525, 350: 3915, 400: 5110 },
-    1006: { 250: 3185, 300: 3985, 350: 4295, 400: 5600 },
-    1106: { 250: 2940, 300: 3545, 350: 3880, 400: 5150 },
-    1206: { 250: 3810, 300: 4555, 350: 4940, 400: 6555 },
+  const polySpiAluSide: { [key: number]: { [key: number]: number } } = {
+    306: { 250: 740, 300: 900, 350: 1030, 400: 1200, 450: 1360, 500: 1500 },
+    406: { 250: 740, 300: 900, 350: 1030, 400: 1200, 450: 1360, 500: 1500 },
+    506: { 250: 580, 300: 695, 350: 810, 400: 920, 450: 1160, 500: 1280 },
+    606: { 250: 580, 300: 695, 350: 810, 400: 920, 450: 1160, 500: 1280 },
+    706: { 250: 580, 300: 695, 350: 810, 400: 920, 450: 1160, 500: 1280 },
+    806: { 250: 580, 300: 695, 350: 810, 400: 920, 450: 1160, 500: 1280 },
+    906: { 250: 580, 300: 695, 350: 810, 400: 920, 450: 1160, 500: 1280 },
+    1006: { 250: 580, 300: 695, 350: 810, 400: 920, 450: 1160, 500: 1280 },
+    1106: { 250: 580, 300: 695, 350: 810, 400: 920, 450: 1160, 500: 1280 },
+    1206: { 250: 580, 300: 695, 350: 810, 400: 920, 450: 1160, 500: 1280 },
+  };
+  const fullAluSide: { [key: number]: { [key: number]: number } } = {
+    306: { 250: 1050, 300: 1120, 350: 1280, 400: 1500, 450: 1680, 500: 1880 },
+    406: { 250: 1050, 300: 1120, 350: 1280, 400: 1500, 450: 1680, 500: 1880 },
+    506: { 250: 690, 300: 835, 350: 960, 400: 1100, 450: 1460, 500: 1660 },
+    606: { 250: 690, 300: 835, 350: 960, 400: 1100, 450: 1460, 500: 1660 },
+    706: { 250: 690, 300: 835, 350: 960, 400: 1100, 450: 1460, 500: 1660 },
+    806: { 250: 690, 300: 835, 350: 960, 400: 1100, 450: 1460, 500: 1660 },
+    906: { 250: 690, 300: 835, 350: 960, 400: 1100, 450: 1460, 500: 1660 },
+    1006: { 250: 690, 300: 835, 350: 960, 400: 1100, 450: 1460, 500: 1660 },
+    1106: { 250: 690, 300: 835, 350: 960, 400: 1100, 450: 1460, 500: 1660 },
+    1206: { 250: 690, 300: 835, 350: 960, 400: 1100, 450: 1460, 500: 1660 },
+  };
+  const polySpiInsuSide: { [key: number]: { [key: number]: number } } = {
+    306: { 250: 740, 300: 900, 350: 1030, 400: 1200, 450: 1360, 500: 1500 },
+  };
+  const fullInsuSide: { [key: number]: { [key: number]: number } } = {
+    306: { 250: 1050, 300: 1120, 350: 1280, 400: 1500, 450: 1680, 500: 1880 },
+  };
+  const polySpiGlasSlide: { [key: number]: { [key: number]: number } } = {
+    306: { 250: 825, 300: 855, 350: 1120, 400: 1140, 450: 1450, 500: 1470 },
+    406: { 250: 825, 300: 855, 350: 1120, 400: 1140, 450: 1450, 500: 1470 },
+    506: { 250: 880, 300: 900, 350: 1140, 400: 1145, 450: 1550, 500: 1570 },
+    606: { 250: 880, 300: 900, 350: 1140, 400: 1145, 450: 1550, 500: 1570 },
+    706: { 250: 880, 300: 900, 350: 1140, 400: 1145, 450: 1550, 500: 1570 },
+    806: { 250: 880, 300: 900, 350: 1140, 400: 1145, 450: 1550, 500: 1570 },
+    906: { 250: 880, 300: 900, 350: 1140, 400: 1145, 450: 1550, 500: 1570 },
+    1006: { 250: 880, 300: 900, 350: 1140, 400: 1145, 450: 1550, 500: 1570 },
+    1106: { 250: 880, 300: 900, 350: 1140, 400: 1145, 450: 1550, 500: 1570 },
+    1206: { 250: 880, 300: 900, 350: 1140, 400: 1145, 450: 1550, 500: 1570 },
+  };
+  const aluSpiGlasSlide: { [key: number]: { [key: number]: number } } = {
+    306: { 250: 1005, 300: 1075, 350: 1370, 400: 1440, 450: 1675, 500: 1750 },
+    406: { 250: 1005, 300: 1075, 350: 1370, 400: 1440, 450: 1675, 500: 1750 },
+    506: { 250: 990, 300: 1040, 350: 1285, 400: 1330, 450: 1750, 500: 1850 },
+    606: { 250: 990, 300: 1040, 350: 1285, 400: 1330, 450: 1750, 500: 1850 },
+    706: { 250: 990, 300: 1040, 350: 1285, 400: 1330, 450: 1750, 500: 1850 },
+    806: { 250: 990, 300: 1040, 350: 1285, 400: 1330, 450: 1750, 500: 1850 },
+    906: { 250: 990, 300: 1040, 350: 1285, 400: 1330, 450: 1750, 500: 1850 },
+    1006: { 250: 990, 300: 1040, 350: 1285, 400: 1330, 450: 1750, 500: 1850 },
+    1106: { 250: 990, 300: 1040, 350: 1285, 400: 1330, 450: 1750, 500: 1850 },
+    1206: { 250: 990, 300: 1040, 350: 1285, 400: 1330, 450: 1750, 500: 1850 },
+  };
+  const glasSpiGlasSlide: { [key: number]: { [key: number]: number } } = {
+    306: { 250: 1135, 300: 1255, 350: 1620, 400: 1740 },
+    406: { 250: 1135, 300: 1255, 350: 1620, 400: 1740 },
+    506: { 250: 1250, 300: 1360, 350: 1680, 400: 1740 },
+    606: { 250: 1250, 300: 1360, 350: 1680, 400: 1790 },
+    706: { 250: 1250, 300: 1360, 350: 1680, 400: 1790 },
+    806: { 250: 1250, 300: 1360, 350: 1680, 400: 1790 },
+    906: { 250: 1250, 300: 1360, 350: 1680, 400: 1790 },
+    1006: { 250: 1250, 300: 1360, 350: 1680, 400: 1790 },
+    1106: { 250: 1250, 300: 1360, 350: 1680, 400: 1790 },
+    1206: { 250: 1250, 300: 1360, 350: 1680, 400: 1790 },
+  };
+  const fixFrame: { [key: number]: { [key: number]: number } } = {
+    306: { 250: 2250, 300: 2545, 350: 2690, 400: 3075 },
+    406: { 250: 2250, 300: 2545, 350: 2690, 400: 3075 },
+    506: { 250: 2250, 300: 2545, 350: 2690, 400: 3075 },
+    606: { 250: 2250, 300: 2545, 350: 2690, 400: 3075 },
+    706: { 250: 2250, 300: 2545, 350: 2690, 400: 3075 },
+    806: { 250: 2250, 300: 2545, 350: 2690, 400: 3075 },
+    906: { 250: 2250, 300: 2545, 350: 2690, 400: 3075 },
+    1006: { 250: 2250, 300: 2545, 350: 2690, 400: 3075 },
+    1106: { 250: 2250, 300: 2545, 350: 2690, 400: 3075 },
+    1206: { 250: 2250, 300: 2545, 350: 2690, 400: 3075 },
   };
 
   const getPrice = (
@@ -50,11 +116,9 @@ export default function LeftWall() {
     return prices[width]?.[depth] || 0;
   };
 
-  const handleGlassClearPrice = () =>
-    getPrice(glassClearPrices, verandaWidth, verandaDepth);
-
-  const handleGlassOpalPrice = () =>
-    getPrice(glassOpalPrices, verandaWidth, verandaDepth);
+  const handlePrice = (variable: {
+    [key: number]: { [key: number]: number };
+  }) => getPrice(variable, verandaWidth, verandaDepth);
 
   return (
     <>
@@ -64,14 +128,28 @@ export default function LeftWall() {
             className="uppercase mt-2"
             heading={`Left side Excluding mounting ${verandaDepth} cm`}
           >
+            <div className="text-start">
+              <Button
+                className="text-center bg-accent1 hover:bg-accent2 mb-4 uppercase"
+                size="default"
+                variant="default"
+                onClick={() => setWallNavigate(false)}
+              >
+                Back
+              </Button>
+            </div>
             <CommandItem
               onSelect={() => setLeftWallType("open")}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
                 leftWallType === "open" ? "border-accent1" : ""
               }`}
             >
-              <img className="w-24" src="./images/red-cross.jpg" alt="open" />
-              <div className="text-center">Open</div>
+              <img
+                className="w-24 h-16"
+                src="./images/red-cross.jpg"
+                alt="open"
+              />
+              <div className="text-start">Open</div>
             </CommandItem>
             <CommandItem
               onSelect={() => setLeftWallType("polySpike")}
@@ -80,12 +158,12 @@ export default function LeftWall() {
               }`}
             >
               <img
-                className="w-24"
+                className="w-24 h-16"
                 src="./images/polycarbonate-spike.jpg"
                 alt="polySpike"
               />
-              <div className="text-center">
-                Polycarbonate Spike{`(+€${getPrice})`}
+              <div className="text-start">
+                Polycarbonate Spike{`(+€${handlePrice(polycarbonateSpike)}.00)`}
               </div>
             </CommandItem>
             <CommandItem
@@ -95,12 +173,13 @@ export default function LeftWall() {
               }`}
             >
               <img
-                className="w-24"
+                className="w-24 h-16"
                 src="./images/polycarbonate_and_aluminum.jpg"
                 alt="ploySpiAluSide"
               />
               <div className="text-start">
                 Polycarbonate Spike + Aluminum Side Wall
+                {`(+€${handlePrice(polySpiAluSide)}.00)`}
               </div>
             </CommandItem>
             <CommandItem
@@ -110,12 +189,50 @@ export default function LeftWall() {
               }`}
             >
               <img
-                className="w-24"
+                className="w-24 h-16"
                 src="./images/full-aluminum.jpg"
                 alt="fullAluSide"
               />
-              <div className="text-start">Full Aluminum Side Wall</div>
+              <div className="text-start">
+                Full Aluminum Side Wall{`(+€${handlePrice(fullAluSide)}.00)`}
+              </div>
             </CommandItem>
+            {verandaWidth === 306 && (
+              <>
+                <CommandItem
+                  onSelect={() => setLeftWallType("polyInsu")}
+                  className={`flex gap-2 border-2 cursor-pointer mb-1 ${
+                    leftWallType === "polyInsu" ? "border-accent1" : ""
+                  }`}
+                >
+                  <img
+                    className="w-24 h-16"
+                    src="./images/polyInsu.jpg"
+                    alt="polyInsu"
+                  />
+                  <div className="text-start">
+                    Polycarbonate Spigot + Insulated Side Wall
+                    {`(+€${handlePrice(polySpiInsuSide)}.00)`}
+                  </div>
+                </CommandItem>
+                <CommandItem
+                  onSelect={() => setLeftWallType("fullInsu")}
+                  className={`flex gap-2 border-2 cursor-pointer mb-1 ${
+                    leftWallType === "fullInsu" ? "border-accent1" : ""
+                  }`}
+                >
+                  <img
+                    className="w-24 h-16"
+                    src="./images/full_Insu.jpg"
+                    alt="fullInsu"
+                  />
+                  <div className="text-start">
+                    Full Insulated Side Wall
+                    {`(+€${handlePrice(fullInsuSide)}.00)`}
+                  </div>
+                </CommandItem>
+              </>
+            )}
             <CommandItem
               onSelect={() => setLeftWallType("polySpieGlasSlide")}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
@@ -123,12 +240,13 @@ export default function LeftWall() {
               }`}
             >
               <img
-                className="w-24"
+                className="w-24 h-16"
                 src="./images/polycarbonate_and_glass.jpg"
                 alt="polySpieGlasSlide"
               />
               <div className="text-start">
                 Polycarbonate Spie + Glass sliding walls
+                {`(+€${handlePrice(polySpiGlasSlide)}.00)`}
               </div>
             </CommandItem>
             <CommandItem
@@ -138,12 +256,13 @@ export default function LeftWall() {
               }`}
             >
               <img
-                className="w-24"
+                className="w-24 h-16"
                 src="./images/Alu_spigot_and_glass_slide.jpg"
                 alt="aluSpiGlasSlide"
               />
               <div className="text-start">
                 Aluminum Spigot + Glass Sliding Walls
+                {`(+€${handlePrice(aluSpiGlasSlide)}.00)`}
               </div>
             </CommandItem>
 
@@ -156,12 +275,13 @@ export default function LeftWall() {
                   }`}
                 >
                   <img
-                    className="w-24"
+                    className="w-24 h-16"
                     src="./images/glass_spike_and_glass_slide_wall.jpg"
                     alt="glasSpiGlasSlide"
                   />
                   <div className="text-start">
                     Glass Spigot + Glass Sliding Walls
+                    {`(+€${handlePrice(glasSpiGlasSlide)}.00)`}
                   </div>
                 </CommandItem>
                 <CommandItem
@@ -171,24 +291,16 @@ export default function LeftWall() {
                   }`}
                 >
                   <img
-                    className="w-24"
+                    className="w-24 h-16"
                     src="./images/fixed_frame.jpg"
                     alt="fixFrame"
                   />
-                  <div className="text-start">Fixed Frame</div>
+                  <div className="text-start">
+                    Fixed Frame{`(+€${handlePrice(fixFrame)}.00)`}
+                  </div>
                 </CommandItem>
               </>
             )}
-            <div className="text-start">
-              <Button
-                className="text-center bg-accent1 hover:bg-accent2 mb-4 uppercase"
-                size="default"
-                variant="default"
-                onClick={() => setWallNavigate(false)}
-              >
-                Back
-              </Button>
-            </div>
           </CommandGroup>
         </CommandList>
       </Command>
