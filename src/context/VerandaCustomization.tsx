@@ -65,8 +65,6 @@ interface ContextProps {
     | "polySpike"
     | "ploySpiAluSide"
     | "fullAluSide"
-    | "polyInsu"
-    | "fullInsu"
     | "polySpieGlasSlide"
     | "aluSpiGlasSlide"
     | "glasSpiGlasSlide"
@@ -77,8 +75,6 @@ interface ContextProps {
       | "polySpike"
       | "ploySpiAluSide"
       | "fullAluSide"
-      | "polyInsu"
-      | "fullInsu"
       | "polySpieGlasSlide"
       | "aluSpiGlasSlide"
       | "glasSpiGlasSlide"
@@ -118,7 +114,6 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
   const [verandaRoof, setVerandaRoof] = useState<
     "polyOpal" | "polyClear" | "glassClear" | "glassOpal"
   >("polyOpal");
-  const [rTube, setRTube] = useState(false);
   const [verandaShortening, setVerandaShortening] = useState<
     "no" | "width" | "depth" | "widthAndDepth"
   >("no");
@@ -131,8 +126,6 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
     | "polySpike"
     | "ploySpiAluSide"
     | "fullAluSide"
-    | "polyInsu"
-    | "fullInsu"
     | "polySpieGlasSlide"
     | "aluSpiGlasSlide"
     | "glasSpiGlasSlide"
@@ -183,6 +176,10 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
         // Lighting tab
         lightingType,
         setLightingType,
+
+        // Delevery tab
+        deleveryType,
+        setDeleveryType,
       }}
     >
       {children}

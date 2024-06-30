@@ -30,7 +30,7 @@ export default function StepBtns() {
   };
 
   return (
-    <div className="w-full fixed bottom-2 text-center sm:absolute sm:bottom-0 ">
+    <div className="w-full fixed bottom-0 text-center sm:absolute sm:-bottom-2 ">
       <Button
         onClick={handleBackBtn}
         className="text-center mx-2 mb-4 uppercase border-2 border-accent1 bg-bgColor hover:bg-bgGrayColor hover:border-accent2"

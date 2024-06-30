@@ -1,7 +1,8 @@
 import { Center, Environment, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { BaseBuilding } from './BaseBuilding';
+
 import { Suspense } from 'react';
+import { Model } from './Model';
 
 export default function Canvas3D() {
   return (
@@ -11,7 +12,7 @@ export default function Canvas3D() {
       >
         <Canvas
           flat
-          camera={{ fov: 65, near: 0.1, far: 100, position: [0, -1, 5] }}
+          camera={{ fov: 65, near: 0.1, far: 100, position: [0, -1, 7] }}
           className="touch-none"
         >
           <color attach="background" args={['#191920']} />
@@ -20,13 +21,13 @@ export default function Canvas3D() {
             minPolarAngle={Math.PI / 4}
             maxPolarAngle={Math.PI / 2}
             minAzimuthAngle={-Math.PI / 3}
-            maxAzimuthAngle={Math.PI / 2}
+            maxAzimuthAngle={Math.PI / 3}
             minDistance={0.1}
             maxDistance={10}
           />
           <ambientLight />
           <Center>
-            <BaseBuilding />
+            <Model />
           </Center>
           <Environment environmentIntensity={0.3} preset="studio" blur={4} />
         </Canvas>
