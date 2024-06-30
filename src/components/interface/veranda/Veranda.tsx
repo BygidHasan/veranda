@@ -2,6 +2,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useVeranda } from '@/context/VerandaCustomization';
 import BaseChoiceVerandaTab from './baseChoiceTab/BaseChoiceVerandaTab';
 import WallInterface from './wallOptionsTab/WallInterface';
+import LightingTab from './lightingTab/LightingTab';
+import DeleveryTab from './delevaryTab/DeleveryTab';
 
 export default function Veranda() {
   const { verandaTabs, setVerandaTabs } = useVeranda();
@@ -58,10 +60,10 @@ export default function Veranda() {
           <WallInterface />
         </TabsContent>
         <TabsContent className="text-center" value="led">
-          led content
+          <LightingTab />
         </TabsContent>
         <TabsContent className="text-center" value="delivery">
-          delivery content
+          <DeleveryTab />
         </TabsContent>
       </Tabs>
     </>
