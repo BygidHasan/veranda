@@ -3,9 +3,9 @@ import {
   CommandList,
   CommandGroup,
   CommandItem,
-} from "@/components/ui/command";
-import { Button } from "@/components/ui/button";
-import { useVeranda } from "@/context/VerandaCustomization";
+} from '@/components/ui/command';
+import { Button } from '@/components/ui/button';
+import { useVeranda } from '@/context/VerandaCustomization';
 
 export default function RighttWall() {
   const {
@@ -124,24 +124,24 @@ export default function RighttWall() {
     <>
       <Command>
         <CommandList className="max-h-[40svh] sm:max-h-[82svh]">
+          <div className="text-start">
+            <Button
+              className="text-center bg-accent1 hover:bg-accent2 uppercase"
+              size="default"
+              variant="default"
+              onClick={() => setWallNavigate(false)}
+            >
+              Back
+            </Button>
+          </div>
           <CommandGroup
-            className="uppercase mt-2"
+            className="uppercase mt-2 text-start"
             heading={`Right side Excluding mounting ${verandaDepth} cm`}
           >
-            <div className="text-start">
-              <Button
-                className="text-center bg-accent1 hover:bg-accent2 mb-4 uppercase"
-                size="default"
-                variant="default"
-                onClick={() => setWallNavigate(false)}
-              >
-                Back
-              </Button>
-            </div>
             <CommandItem
-              onSelect={() => setRightWallType("open")}
+              onSelect={() => setRightWallType('open')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                rightWallType === "open" ? "border-accent1" : ""
+                rightWallType === 'open' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -152,9 +152,9 @@ export default function RighttWall() {
               <div className="text-start">Open</div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setRightWallType("polySpike")}
+              onSelect={() => setRightWallType('polySpike')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                rightWallType === "polySpike" ? "border-accent1" : ""
+                rightWallType === 'polySpike' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -167,9 +167,9 @@ export default function RighttWall() {
               </div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setRightWallType("ploySpiAluSide")}
+              onSelect={() => setRightWallType('ploySpiAluSide')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                rightWallType === "ploySpiAluSide" ? "border-accent1" : ""
+                rightWallType === 'ploySpiAluSide' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -183,9 +183,9 @@ export default function RighttWall() {
               </div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setRightWallType("fullAluSide")}
+              onSelect={() => setRightWallType('fullAluSide')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                rightWallType === "fullAluSide" ? "border-accent1" : ""
+                rightWallType === 'fullAluSide' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -200,9 +200,9 @@ export default function RighttWall() {
             {verandaWidth === 306 && (
               <>
                 <CommandItem
-                  onSelect={() => setRightWallType("polyInsu")}
+                  onSelect={() => setRightWallType('polyInsu')}
                   className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                    rightWallType === "polyInsu" ? "border-accent1" : ""
+                    rightWallType === 'polyInsu' ? 'border-accent1' : ''
                   }`}
                 >
                   <img
@@ -216,9 +216,9 @@ export default function RighttWall() {
                   </div>
                 </CommandItem>
                 <CommandItem
-                  onSelect={() => setRightWallType("fullInsu")}
+                  onSelect={() => setRightWallType('fullInsu')}
                   className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                    rightWallType === "fullInsu" ? "border-accent1" : ""
+                    rightWallType === 'fullInsu' ? 'border-accent1' : ''
                   }`}
                 >
                   <img
@@ -234,9 +234,9 @@ export default function RighttWall() {
               </>
             )}
             <CommandItem
-              onSelect={() => setRightWallType("polySpieGlasSlide")}
+              onSelect={() => setRightWallType('polySpieGlasSlide')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                rightWallType === "polySpieGlasSlide" ? "border-accent1" : ""
+                rightWallType === 'polySpieGlasSlide' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -250,9 +250,9 @@ export default function RighttWall() {
               </div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setRightWallType("aluSpiGlasSlide")}
+              onSelect={() => setRightWallType('aluSpiGlasSlide')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                rightWallType === "aluSpiGlasSlide" ? "border-accent1" : ""
+                rightWallType === 'aluSpiGlasSlide' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -269,9 +269,9 @@ export default function RighttWall() {
             {!(verandaDepth === 450 || verandaDepth === 500) && (
               <>
                 <CommandItem
-                  onSelect={() => setRightWallType("glasSpiGlasSlide")}
+                  onSelect={() => setRightWallType('glasSpiGlasSlide')}
                   className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                    rightWallType === "glasSpiGlasSlide" ? "border-accent1" : ""
+                    rightWallType === 'glasSpiGlasSlide' ? 'border-accent1' : ''
                   }`}
                 >
                   <img
@@ -285,9 +285,9 @@ export default function RighttWall() {
                   </div>
                 </CommandItem>
                 <CommandItem
-                  onSelect={() => setRightWallType("fixFrame")}
+                  onSelect={() => setRightWallType('fixFrame')}
                   className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                    rightWallType === "fixFrame" ? "border-accent1" : ""
+                    rightWallType === 'fixFrame' ? 'border-accent1' : ''
                   }`}
                 >
                   <img

@@ -5,7 +5,7 @@ export default function VerandaColor() {
   const { verandaColor, setVerandaColor } = useVeranda();
 
   return (
-    <CommandGroup className="uppercase mt-2" heading="Free-standing construction">
+    <CommandGroup className="uppercase mt-2" heading="Color">
       <CommandItem
         onSelect={() => setVerandaColor('anthracite')}
         className={`flex items-center justify-start gap-2 border-2 cursor-pointer mb-1 ${

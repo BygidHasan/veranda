@@ -3,9 +3,9 @@ import {
   CommandList,
   CommandGroup,
   CommandItem,
-} from "@/components/ui/command";
-import { Button } from "@/components/ui/button";
-import { useVeranda } from "@/context/VerandaCustomization";
+} from '@/components/ui/command';
+import { Button } from '@/components/ui/button';
+import { useVeranda } from '@/context/VerandaCustomization';
 
 export default function LeftWall() {
   const {
@@ -124,24 +124,24 @@ export default function LeftWall() {
     <>
       <Command>
         <CommandList className="max-h-[40svh] sm:max-h-[82svh]">
+          <div className="text-start">
+            <Button
+              className="text-center bg-accent1 hover:bg-accent2 uppercase"
+              size="default"
+              variant="default"
+              onClick={() => setWallNavigate(false)}
+            >
+              Back
+            </Button>
+          </div>
           <CommandGroup
-            className="uppercase mt-2"
+            className="uppercase mt-2 text-start"
             heading={`Left side Excluding mounting ${verandaDepth} cm`}
           >
-            <div className="text-start">
-              <Button
-                className="text-center bg-accent1 hover:bg-accent2 mb-4 uppercase"
-                size="default"
-                variant="default"
-                onClick={() => setWallNavigate(false)}
-              >
-                Back
-              </Button>
-            </div>
             <CommandItem
-              onSelect={() => setLeftWallType("open")}
+              onSelect={() => setLeftWallType('open')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                leftWallType === "open" ? "border-accent1" : ""
+                leftWallType === 'open' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -152,9 +152,9 @@ export default function LeftWall() {
               <div className="text-start">Open</div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setLeftWallType("polySpike")}
+              onSelect={() => setLeftWallType('polySpike')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                leftWallType === "polySpike" ? "border-accent1" : ""
+                leftWallType === 'polySpike' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -167,9 +167,9 @@ export default function LeftWall() {
               </div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setLeftWallType("ploySpiAluSide")}
+              onSelect={() => setLeftWallType('ploySpiAluSide')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                leftWallType === "ploySpiAluSide" ? "border-accent1" : ""
+                leftWallType === 'ploySpiAluSide' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -183,9 +183,9 @@ export default function LeftWall() {
               </div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setLeftWallType("fullAluSide")}
+              onSelect={() => setLeftWallType('fullAluSide')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                leftWallType === "fullAluSide" ? "border-accent1" : ""
+                leftWallType === 'fullAluSide' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -200,9 +200,9 @@ export default function LeftWall() {
             {verandaWidth === 306 && (
               <>
                 <CommandItem
-                  onSelect={() => setLeftWallType("polyInsu")}
+                  onSelect={() => setLeftWallType('polyInsu')}
                   className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                    leftWallType === "polyInsu" ? "border-accent1" : ""
+                    leftWallType === 'polyInsu' ? 'border-accent1' : ''
                   }`}
                 >
                   <img
@@ -216,9 +216,9 @@ export default function LeftWall() {
                   </div>
                 </CommandItem>
                 <CommandItem
-                  onSelect={() => setLeftWallType("fullInsu")}
+                  onSelect={() => setLeftWallType('fullInsu')}
                   className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                    leftWallType === "fullInsu" ? "border-accent1" : ""
+                    leftWallType === 'fullInsu' ? 'border-accent1' : ''
                   }`}
                 >
                   <img
@@ -234,9 +234,9 @@ export default function LeftWall() {
               </>
             )}
             <CommandItem
-              onSelect={() => setLeftWallType("polySpieGlasSlide")}
+              onSelect={() => setLeftWallType('polySpieGlasSlide')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                leftWallType === "polySpieGlasSlide" ? "border-accent1" : ""
+                leftWallType === 'polySpieGlasSlide' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -250,9 +250,9 @@ export default function LeftWall() {
               </div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setLeftWallType("aluSpiGlasSlide")}
+              onSelect={() => setLeftWallType('aluSpiGlasSlide')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                leftWallType === "aluSpiGlasSlide" ? "border-accent1" : ""
+                leftWallType === 'aluSpiGlasSlide' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -269,9 +269,9 @@ export default function LeftWall() {
             {!(verandaDepth === 450 || verandaDepth === 500) && (
               <>
                 <CommandItem
-                  onSelect={() => setLeftWallType("glasSpiGlasSlide")}
+                  onSelect={() => setLeftWallType('glasSpiGlasSlide')}
                   className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                    leftWallType === "glasSpiGlasSlide" ? "border-accent1" : ""
+                    leftWallType === 'glasSpiGlasSlide' ? 'border-accent1' : ''
                   }`}
                 >
                   <img
@@ -285,9 +285,9 @@ export default function LeftWall() {
                   </div>
                 </CommandItem>
                 <CommandItem
-                  onSelect={() => setLeftWallType("fixFrame")}
+                  onSelect={() => setLeftWallType('fixFrame')}
                   className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                    leftWallType === "fixFrame" ? "border-accent1" : ""
+                    leftWallType === 'fixFrame' ? 'border-accent1' : ''
                   }`}
                 >
                   <img

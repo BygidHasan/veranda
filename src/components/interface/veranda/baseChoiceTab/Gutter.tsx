@@ -22,7 +22,7 @@ export default function Gutter() {
   };
 
   return (
-    <CommandGroup className="uppercase mt-2" heading="Free-standing construction">
+    <CommandGroup className="uppercase mt-2" heading="Gutter moulding">
       <div className="flex items-center gap-2">
         <CommandItem
           onSelect={() => setFlatGutterV(false)}

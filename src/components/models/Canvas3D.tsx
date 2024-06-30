@@ -25,11 +25,11 @@ export default function Canvas3D() {
             minDistance={0.1}
             maxDistance={10}
           />
-          <ambientLight />
+          <ambientLight intensity={5} />
           <Center>
             <Model />
           </Center>
-          <Environment environmentIntensity={0.3} preset="studio" blur={4} />
+          <Environment environmentIntensity={0.3} preset="lobby" blur={4} />
         </Canvas>
       </Suspense>
     </div>

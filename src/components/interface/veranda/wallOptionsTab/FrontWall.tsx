@@ -3,9 +3,9 @@ import {
   CommandList,
   CommandGroup,
   CommandItem,
-} from "@/components/ui/command";
-import { Button } from "@/components/ui/button";
-import { useVeranda } from "@/context/VerandaCustomization";
+} from '@/components/ui/command';
+import { Button } from '@/components/ui/button';
+import { useVeranda } from '@/context/VerandaCustomization';
 
 export default function LeftWall() {
   const {
@@ -65,24 +65,24 @@ export default function LeftWall() {
     <>
       <Command>
         <CommandList className="max-h-[40svh] sm:max-h-[82svh]">
+          <div className="text-start">
+            <Button
+              className="text-center bg-accent1 hover:bg-accent2 uppercase"
+              size="default"
+              variant="default"
+              onClick={() => setWallNavigate(false)}
+            >
+              Back
+            </Button>
+          </div>
           <CommandGroup
-            className="uppercase mt-2"
+            className="uppercase mt-2 text-start"
             heading={`Left side Excluding mounting ${verandaDepth} cm`}
           >
-            <div className="text-start">
-              <Button
-                className="text-center bg-accent1 hover:bg-accent2 mb-4 uppercase"
-                size="default"
-                variant="default"
-                onClick={() => setWallNavigate(false)}
-              >
-                Back
-              </Button>
-            </div>
             <CommandItem
-              onSelect={() => setFrontWallType("open")}
+              onSelect={() => setFrontWallType('open')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                frontWallType === "open" ? "border-accent1" : ""
+                frontWallType === 'open' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -93,9 +93,9 @@ export default function LeftWall() {
               <div className="text-start">Open</div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setFrontWallType("glasSlide")}
+              onSelect={() => setFrontWallType('glasSlide')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                frontWallType === "glasSlide" ? "border-accent1" : ""
+                frontWallType === 'glasSlide' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -108,9 +108,9 @@ export default function LeftWall() {
               </div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setFrontWallType("SlideDoor")}
+              onSelect={() => setFrontWallType('SlideDoor')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                frontWallType === "SlideDoor" ? "border-accent1" : ""
+                frontWallType === 'SlideDoor' ? 'border-accent1' : ''
               }`}
             >
               <img
@@ -124,9 +124,9 @@ export default function LeftWall() {
               </div>
             </CommandItem>
             <CommandItem
-              onSelect={() => setFrontWallType("ElectricScreen")}
+              onSelect={() => setFrontWallType('ElectricScreen')}
               className={`flex gap-2 border-2 cursor-pointer mb-1 ${
-                frontWallType === "ElectricScreen" ? "border-accent1" : ""
+                frontWallType === 'ElectricScreen' ? 'border-accent1' : ''
               }`}
             >
               <img
