@@ -65,6 +65,8 @@ interface ContextProps {
     | "polySpike"
     | "ploySpiAluSide"
     | "fullAluSide"
+    | "polyInsu"
+    | "fullInsu"
     | "polySpieGlasSlide"
     | "aluSpiGlasSlide"
     | "glasSpiGlasSlide"
@@ -75,6 +77,8 @@ interface ContextProps {
       | "polySpike"
       | "ploySpiAluSide"
       | "fullAluSide"
+      | "polyInsu"
+      | "fullInsu"
       | "polySpieGlasSlide"
       | "aluSpiGlasSlide"
       | "glasSpiGlasSlide"
@@ -84,6 +88,20 @@ interface ContextProps {
   // Lighting tab
   lightingType: "no" | "1per" | "2per" | "3per";
   setLightingType: (lightingType: "no" | "1per" | "2per" | "3per") => void;
+
+  // Delevery tab
+  deleveryType:
+    | "freePickup"
+    | "takewayAssembly"
+    | "freeDelevery"
+    | "paidDelevery";
+  setDeleveryType: (
+    deleveryType:
+      | "freePickup"
+      | "takewayAssembly"
+      | "freeDelevery"
+      | "paidDelevery"
+  ) => void;
 }
 
 const VerandaCustomizationContext = createContext<ContextProps | undefined>(
@@ -114,6 +132,7 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
   const [verandaRoof, setVerandaRoof] = useState<
     "polyOpal" | "polyClear" | "glassClear" | "glassOpal"
   >("polyOpal");
+  const [rTube, setRTube] = useState(false);
   const [verandaShortening, setVerandaShortening] = useState<
     "no" | "width" | "depth" | "widthAndDepth"
   >("no");
@@ -126,6 +145,8 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
     | "polySpike"
     | "ploySpiAluSide"
     | "fullAluSide"
+    | "polyInsu"
+    | "fullInsu"
     | "polySpieGlasSlide"
     | "aluSpiGlasSlide"
     | "glasSpiGlasSlide"
@@ -136,6 +157,11 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
   const [lightingType, setLightingType] = useState<
     "no" | "1per" | "2per" | "3per"
   >("no");
+
+  // Delevery tab
+  const [deleveryType, setDeleveryType] = useState<
+    "freePickup" | "takewayAssembly" | "freeDelevery" | "paidDelevery"
+  >("freePickup");
 
   return (
     <VerandaCustomizationContext.Provider
