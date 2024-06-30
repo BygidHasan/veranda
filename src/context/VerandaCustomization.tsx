@@ -60,6 +60,7 @@ interface ContextProps {
   setWallType: (wallType: "left" | "right" | "front") => void;
   wallnavigate: boolean;
   setWallNavigate: Dispatch<SetStateAction<boolean>>;
+
   leftWallType:
     | "open"
     | "polySpike"
@@ -83,6 +84,36 @@ interface ContextProps {
       | "aluSpiGlasSlide"
       | "glasSpiGlasSlide"
       | "fixFrame"
+  ) => void;
+
+  rightWallType:
+    | "open"
+    | "polySpike"
+    | "ploySpiAluSide"
+    | "fullAluSide"
+    | "polyInsu"
+    | "fullInsu"
+    | "polySpieGlasSlide"
+    | "aluSpiGlasSlide"
+    | "glasSpiGlasSlide"
+    | "fixFrame";
+  setRightWallType: (
+    rightWallType:
+      | "open"
+      | "polySpike"
+      | "ploySpiAluSide"
+      | "fullAluSide"
+      | "polyInsu"
+      | "fullInsu"
+      | "polySpieGlasSlide"
+      | "aluSpiGlasSlide"
+      | "glasSpiGlasSlide"
+      | "fixFrame"
+  ) => void;
+
+  frontWallType: "open" | "glasSlide" | "SlideDoor" | "ElectricScreen";
+  setFrontWallType: (
+    rightWallType: "open" | "glasSlide" | "SlideDoor" | "ElectricScreen"
   ) => void;
 
   // Lighting tab
@@ -152,6 +183,21 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
     | "glasSpiGlasSlide"
     | "fixFrame"
   >("open");
+  const [rightWallType, setRightWallType] = useState<
+    | "open"
+    | "polySpike"
+    | "ploySpiAluSide"
+    | "fullAluSide"
+    | "polyInsu"
+    | "fullInsu"
+    | "polySpieGlasSlide"
+    | "aluSpiGlasSlide"
+    | "glasSpiGlasSlide"
+    | "fixFrame"
+  >("open");
+  const [frontWallType, setFrontWallType] = useState<
+    "open" | "glasSlide" | "SlideDoor" | "ElectricScreen"
+  >("open");
 
   // Lighting tab
   const [lightingType, setLightingType] = useState<
@@ -198,6 +244,10 @@ export const VerandaProvider = ({ children }: { children: ReactNode }) => {
         setWallNavigate,
         leftWallType,
         setLeftWallType,
+        rightWallType,
+        setRightWallType,
+        frontWallType,
+        setFrontWallType,
 
         // Lighting tab
         lightingType,
